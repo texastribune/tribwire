@@ -1,0 +1,14 @@
+example/.sass-cache/
+example/bundle/
+example/static/
+example/project.db
+MANIFEST
+dist/
+*.egg-info
+*.pyc
+*.pyo
+.sass-cache
+node_modules/
+tt_*/static/tt_*/css/app.css
+.DS_Store
+
