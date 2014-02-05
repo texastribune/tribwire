@@ -122,7 +122,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # Custom application being tested
-    '{{ app_name }}',
+    'tribwire',
 
     # The app with all of the tests and any example customizations
     'app',
