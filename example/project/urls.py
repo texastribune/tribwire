@@ -4,10 +4,9 @@ except ImportError:
     # We get here with Django 1.3.x.  You can safely remove this if
     # your application only supports Django >= 1.4
     from django.conf.urls.defaults import patterns, include, url
-
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+    from django.contrib import admin
+    admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
