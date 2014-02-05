@@ -10,3 +10,5 @@ dist/
 .sass-cache
 node_modules/
 tt_*/static/tt_*/css/app.css
+.DS_Store
+
