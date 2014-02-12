@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from ..factories import LinkFactory, WireFactory
+from ..factories import LinkFactory, SourceFactory, WireFactory
 
 
 class LinkTest(TestCase):
@@ -17,3 +17,10 @@ class LinkTest(TestCase):
         link = LinkFactory(wires=[wire1, wire2])
         # make sure the link can be created
         self.assertTrue(link)
+
+
+class SourceTest(TestCase):
+    def test_has_favicon(self):
+        source = SourceFactory()
+        # assert does not raise exception
+        source.favicon

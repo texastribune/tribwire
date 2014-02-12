@@ -14,7 +14,7 @@ class Link(models.Model):
 class Source(models.Model):
     name = models.CharField(max_length=128, unique=True)
     url = models.URLField()
-    #favicon = models.OnetoOneField(Favicon)
+    favicon = models.TextField()
 
 class Wire(models.Model):
     name = models.CharField(max_length=128, unique=True)
