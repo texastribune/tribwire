@@ -16,14 +16,17 @@ class UserFactory(factory.DjangoModelFactory):
 
 class SourceFactory(factory.DjangoModelFactory):
     FACTORY_FOR = models.Source
+    name = factory.Sequence(lambda n: 'Source {0}'.format(n))
 
 
 class WireFactory(factory.DjangoModelFactory):
     FACTORY_FOR = models.Wire
+    name = factory.Sequence(lambda n: 'Wire {0}'.format(n))
 
 
 class LinkFactory(factory.DjangoModelFactory):
     FACTORY_FOR = models.Link
+    url = factory.Sequence(lambda n: 'http://example.com/{0}'.format(n))
     date_suggested = factory.LazyAttribute(lambda __: timezone.now())
     user = factory.SubFactory(UserFactory)
     source = factory.SubFactory(SourceFactory)
