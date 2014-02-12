@@ -126,6 +126,7 @@ INSTALLED_APPS = (
 
     # The app with all of the tests and any example customizations
     'app',
+    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging
