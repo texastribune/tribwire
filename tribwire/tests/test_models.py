@@ -1,6 +1,9 @@
 from django.test import TestCase
 
+from ..factories import LinkFactory
 
-class RenamemeTest(TestCase):
+
+class LinkTest(TestCase):
 	def test_fffff(self):
-		self.assertTrue(False)
+		link = LinkFactory()
+		print link
