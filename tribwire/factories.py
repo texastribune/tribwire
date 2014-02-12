@@ -30,4 +30,11 @@ class LinkFactory(factory.DjangoModelFactory):
     date_suggested = factory.LazyAttribute(lambda __: timezone.now())
     user = factory.SubFactory(UserFactory)
     source = factory.SubFactory(SourceFactory)
-    wire = factory.SubFactory(WireFactory)
+     
+    @factory.post_generation
+    def wires(self, create, extracted, **kwargs):
+        if not create:
+            return
+        if extracted:
+            for wire in extracted:
+                self.wires.add(wire)

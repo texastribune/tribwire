@@ -9,7 +9,7 @@ class Link(models.Model):
     date_suggested = models.DateField() 
     user = models.ForeignKey(get_user_model())
     source = models.ForeignKey('Source')
-    wire = models.ForeignKey('Wire')
+    wires = models.ManyToManyField('Wire')
 
 class Source(models.Model):
     name = models.CharField(max_length=128, unique=True)
