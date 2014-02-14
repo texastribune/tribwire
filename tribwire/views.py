@@ -17,4 +17,6 @@ def index(request):
     return render_to_response('tribwire/index.html', context_dict, context)
 
 def new_wire(request):
-    return HttpResponse("tribwire")
+    context = RequestContext(request)
+    context_dict = {'boldmessage': "I am bold font from the context"}
+    return render_to_response('tribwire/new_wire.html', context_dict, context)
