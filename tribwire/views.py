@@ -1,5 +1,6 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponse
 
 def index(request):
     # Request the context of the request.
@@ -15,7 +16,5 @@ def index(request):
     # Note that the first parameter is the template we wish to use.
     return render_to_response('tribwire/index.html', context_dict, context)
 
-#from django.http import HttpResponse
-#
-#def index(request):
-#    return HttpResponse("tribwire")
+def new_wire(request):
+    return HttpResponse("tribwire")
