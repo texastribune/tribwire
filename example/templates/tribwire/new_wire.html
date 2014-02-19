@@ -9,7 +9,11 @@
     </head>
 
     <body>
-       <font face="verdana" color="blue">This will be a new Trib Wire</font>
+       <font face="verdana" color="blue">This will be a new TribWire</font>
+       <form action='new_wire.html' method='post' action = ''>{% csrf_token %}
+		{{ form.as_p }}
+		<input type='submit' value='Submit' />
+		</form>
     </body>
 
 </html>

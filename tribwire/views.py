@@ -1,6 +1,7 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from .forms import PostModelForm
 
 def index(request):
     # Request the context of the request.
@@ -17,6 +18,7 @@ def index(request):
     return render_to_response('tribwire/index.html', context_dict, context)
 
 def new_wire(request):
-    context = RequestContext(request)
-    context_dict = {'boldmessage': "I am bold font from the context"}
-    return render_to_response('tribwire/new_wire.html', context_dict, context)
+    # context = RequestContext(request)
+    # context_dict = {'boldmessage': "I am bold font from the context"}
+    form = PostModelForm()
+    return render_to_response('tribwire/new_wire.html', locals(), context_instance=RequestContext(request))
