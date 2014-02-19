@@ -18,7 +18,5 @@ def index(request):
     return render_to_response('tribwire/index.html', context_dict, context)
 
 def new_wire(request):
-    # context = RequestContext(request)
-    # context_dict = {'boldmessage': "I am bold font from the context"}
-    form = PostModelForm()
+    form = PostModelForm(request.POST or None)
     return render_to_response('tribwire/new_wire.html', locals(), context_instance=RequestContext(request))
