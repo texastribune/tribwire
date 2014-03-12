@@ -21,8 +21,8 @@
   function initMyBookmarklet(){
     var 
         method = {},
-        $overlay,
         $modal,
+        $overlay,
         $content,
         $close;
 
@@ -39,7 +39,7 @@
       });
     };
 
-    // Open the modal
+
     method.open = function (settings) {
       $content.empty().append(settings.content);
 
@@ -62,22 +62,26 @@
       $(window).unbind('resize.modal');
     };
 
-    // Generate the HTML and add it to the document
-    $overlay = $('<div id="overlay"></div>');
-    $modal = $('<div id="modal"></div>');
-    $content = $('<div id="content"></div>');
-    $close = $('<a id="close" href="#">close</a>');
+    function generateModal() {
 
-    $modal.hide();
-    $overlay.hide();
-    $modal.append($content, $close);
+      // Generate the HTML and add it to the document
+      $overlay = $('<div id="overlay"></div>');
+      $modal = $('<div id="modal"></div>');
+      $content = $('<div id="content"></div>');
+      $close = $('<a id="close" href="#">close</a>');
 
-    $close.click(function(e){
-      e.preventDefault();
-      method.close();
-    });
+      $modal.hide();
+      $overlay.hide();
+      $modal.append($content, $close);
 
+      $close.click(function(e){
+        e.preventDefault();
+        method.close();
+      });
+      return $modal;
+    }
 
+    $modal = generateModal();
     $('body').append($overlay, $modal);                       
     // Wait until the DOM has loaded before querying the document
     $.get('new_wire.html', function(data){
