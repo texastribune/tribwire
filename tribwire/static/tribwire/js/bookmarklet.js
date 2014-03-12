@@ -86,7 +86,11 @@
     // Wait until the DOM has loaded before querying the document
     $.get('new_wire.html', function(data){
       method.open({content: data});
-    }); 
+      $modal.find('form').on('submit', function (e) {
+        e.preventDefault();
+        console.log('now what?')
+      });
+    });
   }
 
 //})();
