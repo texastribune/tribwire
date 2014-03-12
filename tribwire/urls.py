@@ -3,5 +3,5 @@ from tribwire import views
 
 urlpatterns = patterns('',
         url(r'^$', views.index, name='index'),
-        url(r'^new_wire.html$', views.new_wire, name='new_wire'),)
+        url(r'^new_wire.html$', views.CreateLink.as_view(), name='new_wire'),)
 

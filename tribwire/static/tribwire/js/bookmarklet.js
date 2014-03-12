@@ -88,7 +88,14 @@
       method.open({content: data});
       $modal.find('form').on('submit', function (e) {
         e.preventDefault();
-        console.log('now what?')
+        var $form = $(this);
+        $.ajax({
+          type: 'POST',
+          url: $form.attr('action'),
+          crossDomain: true,
+          data: $form.serialize(),
+          dataType: 'json'
+        })
       });
     });
   }
