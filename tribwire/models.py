@@ -11,11 +11,22 @@ class Link(models.Model):
     source = models.ForeignKey('Source')
     wires = models.ManyToManyField('Wire')
 
+    def __unicode__(self):
+        return self.url
+
+
 class Source(models.Model):
     name = models.CharField(max_length=128, unique=True)
     url = models.URLField()
     favicon = models.TextField()
 
+    def __unicode__(self):
+        return self.name
+
+
 class Wire(models.Model):
     name = models.CharField(max_length=128, unique=True)
     slug = models.SlugField()
+
+    def __unicode__(self):
+        return self.name
