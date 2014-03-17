@@ -84,7 +84,7 @@
     $modal = generateModal();
     $('body').append($overlay, $modal);                       
     // Wait until the DOM has loaded before querying the document
-    $.get('new_wire.html', function(data){
+    $.get('link_form.html', function(data){
       method.open({content: data});
       $modal.find('form').on('submit', function (e) {
         e.preventDefault();

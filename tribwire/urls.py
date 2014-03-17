@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, url
-from tribwire import views
+from . import views
 
 urlpatterns = patterns('',
-        url(r'^$', views.index, name='index'),
-        url(r'^new_wire.html$', views.CreateLink.as_view(), name='new_wire'),)
-
+		url(r'^$', views.index, name='index'),
+		url(r'^link_form.html$', views.CreateLink.as_view(), name='link_form'))
