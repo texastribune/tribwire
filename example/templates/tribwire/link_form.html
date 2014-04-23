@@ -5,14 +5,25 @@
 <html>
 
   <head>
-
+    <!-- <link rel="stylesheet" type="text/css" href="/static/tribwire/css/modal.css"></link> -->
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/static/tribwire/css/modal.css"></link>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!--<script src="/static/tribwire/js/fill_link_form.js"></script>!-->
+    <script src="http://127.0.0.1:8000/static/tribwire/js/fill_link_form.js"></script>
   </head>
 
   <body>
-    <font face="verdana" color="blue">This will be a new TribWire</font>
-    <form method='post' action="{% url 'link_form' %}">{% csrf_token %}
-      {{ form.as_p }}
-      <input type='submit' value='Submit'>
+    <font face="verdana" color="blue">This will be a new TribWire Link</font>
+    <!--<form action="{% url 'link_form' %}" method="POST" name="link_form">{% csrf_token %}-->
+    <form action="http://127.0.0.1:8000/tribwire/link_form.html" method="POST" name="link_form">
+    {% csrf_token %}
+        <table>
+          {% for f in form %}
+            <tr> <td type="label"> {{ f.name }}</td> 
+            <td type="field">{{ f }}</td> </tr>
+          {% endfor %}
+        </table>
+        <input type="submit" name="submit" id="submit" value="Submit Form">
     </form>
   </body>
 
