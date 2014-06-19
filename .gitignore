@@ -1,5 +1,10 @@
+# Django support files
+*.db
+
+
 # Private user content
 .env
+
 
 example/.sass-cache/
 example/bundle/

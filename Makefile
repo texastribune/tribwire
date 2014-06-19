@@ -9,7 +9,7 @@ test:
 
 resetdb:
 	$(MANAGE) sqlclear tribwire | $(MANAGE) dbshell
-	$(MANAGE) syncdb
+	$(MANAGE) syncdb --noinput
 
 
 .PHONY: test resetdb
