@@ -7,5 +7,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^tribwire/', include('tribwire.urls')),
+    url(r'^tribwire/', include('tribwire.urls', namespace='tribwire')),
 )
