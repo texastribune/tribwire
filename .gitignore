@@ -1,3 +1,6 @@
+# Private user content
+.env
+
 example/.sass-cache/
 example/bundle/
 example/static/
