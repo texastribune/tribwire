@@ -8,14 +8,13 @@
     <!-- <link rel="stylesheet" type="text/css" href="/static/tribwire/css/modal.css"></link> -->
     <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/static/tribwire/css/modal.css"></link>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <!--<script src="/static/tribwire/js/fill_link_form.js"></script>!-->
-    <script src="http://127.0.0.1:8000/static/tribwire/js/fill_link_form.js"></script>
+    <!-- <script src="http://127.0.0.1:8000/static/tribwire/js/fill_link_form.js"></script> -->
   </head>
 
   <body>
     <font face="verdana" color="blue">This will be a new TribWire Link</font>
     <!--<form action="{% url 'tribwire:link_form' %}" method="POST" name="link_form">{% csrf_token %}-->
-    <form action="http://localhost:8000/tribwire/link_form.html" method="POST" name="link_form">
+    <form action="http://127.0.0.1:8000/tribwire/link_form.html" method="POST" name="link_form">
     {% csrf_token %}
         <table>
           {% for f in form %}

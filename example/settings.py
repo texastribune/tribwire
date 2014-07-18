@@ -89,6 +89,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,4 +126,13 @@ INSTALLED_APPS = (
 
     # Extras
     'django_extensions',
+
+    # Setting CORS headers for HTTP requests
+    'corsheaders'
 )
+
+# Allow all domains
+CORS_ORIGIN_ALLOW_ALL = True
+
+# To allow cookies to be sent for CSRF
+CORS_ALLOW_CREDENTIALS = True

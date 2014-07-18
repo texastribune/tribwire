@@ -92,9 +92,11 @@
     $modal = generateModal();
     $('body').append($overlay, $modal);
     // Wait until the DOM has loaded before querying the document
-    $.get('link_form.html', function(data){
+    $.get('http://127.0.0.1:8000/tribwire/link_form.html', function(data){
       method.open({content: data});
       $modal.find('form').on('submit', function (e) {
+        $modal.find('#id_url').val(window.location.href);
+        $modal.find('#id_headline').val(document.getElementsByTagName("h1"));
         e.preventDefault();
         //Set equal to the HTML form element
         var $form = $(this);
@@ -102,7 +104,7 @@
           //This may be something to look at more to account for cross domain
           //requests
           beforeSend: function(xhrObj){
-            xhrObj.setRequestHeader('Access-Control-Allow-Origin: http://localhost:8000');
+            xhrObj.setRequestHeader('Access-Control-Allow-Origin: http://127.0.0.1:8000');
           },
           type: 'POST',
           url: $form.attr('action'),
