@@ -101,11 +101,6 @@
         //Set equal to the HTML form element
         var $form = $(this);
         $.ajax({
-          //This may be something to look at more to account for cross domain
-          //requests
-          beforeSend: function(xhrObj){
-            xhrObj.setRequestHeader('Access-Control-Allow-Origin: http://127.0.0.1:8000');
-          },
           type: 'POST',
           url: $form.attr('action'),
           crossDomain: true,

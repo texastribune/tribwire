@@ -11,6 +11,5 @@ def index(request):
 
     return render_to_response('tribwire/index.html', locals(), context_instance=RequestContext(request))
 
-
 class CreateLink(CreateView):
     model = models.Link

@@ -14,8 +14,7 @@
   <body>
     <font face="verdana" color="blue">This will be a new TribWire Link</font>
     <!--<form action="{% url 'tribwire:link_form' %}" method="POST" name="link_form">{% csrf_token %}-->
-    <form action="http://127.0.0.1:8000/tribwire/link_form.html" method="POST" name="link_form">
-    {% csrf_token %}
+    <form action="http://127.0.0.1:8000/tribwire/link_form.html" method="POST" name="link_form">{% csrf_token %}
         <table>
           {% for f in form %}
             <tr> <td type="label"> {{ f.name }}</td>
