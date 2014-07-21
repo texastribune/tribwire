@@ -94,15 +94,15 @@
     // Wait until the DOM has loaded before querying the document
     $.get('http://127.0.0.1:8000/tribwire/link_form.html', function(data){
       method.open({content: data});
+      $modal.find('#id_url').val(window.location.href);
+      $modal.find('#id_headline').val(document.getElementsByTagName("h1"));
       $modal.find('form').on('submit', function (e) {
-        $modal.find('#id_url').val(window.location.href);
-        $modal.find('#id_headline').val(document.getElementsByTagName("h1"));
         e.preventDefault();
         //Set equal to the HTML form element
         var $form = $(this);
         $.ajax({
           type: 'POST',
-          url: $form.attr('action'),
+          url: 'http://127.0.0.1:8000/tribwire/receive',
           crossDomain: true,
           //Sets data equal to a string of input elements
           data: $form.serialize(),
