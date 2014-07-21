@@ -134,8 +134,12 @@ INSTALLED_APPS = (
 # Allow all domains
 CORS_ORIGIN_ALLOW_ALL = True
 
+# CORS_ORIGIN_WHITELIST = (
+#     'http://www.html5rocks.com/'
+#     )
+
 # To allow cookies to be sent for CSRF
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_HEADERS = (
     'x-requested-with',

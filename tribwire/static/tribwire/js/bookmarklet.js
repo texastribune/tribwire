@@ -104,9 +104,12 @@
           type: 'POST',
           url: 'http://127.0.0.1:8000/tribwire/receive',
           crossDomain: true,
+          xhrFields: {
+            withCredentials: true
+          },
           //Sets data equal to a string of input elements
           data: $form.serialize(),
-          dataType: 'jsonp'
+          dataType: 'json'
         });
       });
     });
