@@ -106,7 +106,7 @@
           crossDomain: true,
           //Sets data equal to a string of input elements
           data: $form.serialize(),
-          dataType: 'json'
+          dataType: 'jsonp'
         });
       });
     });
